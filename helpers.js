@@ -2,7 +2,7 @@ const XLSX = require('xlsx');
 const utils = XLSX.utils;
 
 
-//シートを解析して二重配列に格納する
+//シートを解析して全データを二重配列で格納する
 function importAllData(fileName, sheetName) {
   let workbook = XLSX.readFile('./doc/'+fileName);
   let worksheet = workbook.Sheets[sheetName];
