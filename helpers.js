@@ -4,11 +4,11 @@ const utils = XLSX.utils;
 
 //シートを解析して全データを二重配列で格納する
 function importAllData(fileName, sheetName) {
-  let workbook = XLSX.readFile('./doc/'+fileName);
-  let worksheet = workbook.Sheets[sheetName];
-  let range = worksheet['!ref'];
-  let rangeVal = utils.decode_range(range);
-  let data = [[]]
+  const workbook = XLSX.readFile('./doc/'+fileName);
+  const worksheet = workbook.Sheets[sheetName];
+  const range = worksheet['!ref'];
+  const rangeVal = utils.decode_range(range);
+  const data = [[]]
   let count = 0
   for(let j = rangeVal.s.r; j <= rangeVal.e.r; j++){
     for(let i = rangeVal.s.c; i <= rangeVal.e.c; i++){
